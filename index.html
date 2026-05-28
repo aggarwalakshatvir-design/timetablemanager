@@ -1,0 +1,201 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeTable Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">
+            <span class="yellow">TimeTable</span>
+            <span class="white">MANAGER</span>
+        </div>
+
+        <div class="menu-title">OVERVIEW</div>
+
+        <button class="menu-btn active"
+            onclick="showPage('dashboard')">
+            Dashboard
+        </button>
+
+        <button class="menu-btn"
+            onclick="showPage('timetable')">
+            Full Timetable
+        </button>
+
+        <button class="menu-btn"
+            onclick="showPage('final')">
+            Final Schedule
+        </button>
+
+        <div class="menu-title">
+            ACTIONS
+        </div>
+
+        <button class="menu-btn"
+            onclick="showPage('book')">
+            Book a Class
+        </button>
+
+        <button class="menu-btn"
+            onclick="showPage('room')">
+            Check Room
+        </button>
+
+        <button class="menu-btn"
+            onclick="showPage('teacher')">
+            Check Teacher
+        </button>
+
+        <div class="menu-title">
+            MANAGE
+        </div>
+
+        <div class="setup-box">
+            <input
+                type="text"
+                id="roomInput"
+                placeholder="Room Name">
+
+            <button onclick="addRoom()">
+                Add Room
+            </button>
+
+            <input
+                type="text"
+                id="teacherInput"
+                placeholder="Teacher Name">
+
+            <button onclick="addTeacher()">
+                Add Teacher
+            </button>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- DASHBOARD -->
+        <section id="dashboard"
+            class="page active">
+
+            <h1>Dashboard</h1>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h2 id="roomCount">0</h2>
+                    <p>ROOMS</p>
+                </div>
+
+                <div class="card">
+                    <h2 id="teacherCount">0</h2>
+                    <p>TEACHERS</p>
+                </div>
+
+                <div class="card">
+                    <h2 id="bookedCount">0</h2>
+                    <p>SLOTS BOOKED</p>
+                </div>
+
+                <div class="card">
+                    <h2 id="freeCount">0</h2>
+                    <p>SLOTS FREE</p>
+                </div>
+            </div>
+
+            <div class="table-box">
+                <h3>Quick Timetable View</h3>
+
+                <table id="dashboardTable">
+                </table>
+            </div>
+        </section>
+
+        <!-- BOOK CLASS -->
+        <section id="book"
+            class="page">
+
+            <h1>Book Class</h1>
+
+            <select id="teacherSelect"></select>
+            <select id="roomSelect"></select>
+            <select id="slotSelect"></select>
+
+            <button onclick="bookClass()">
+                Book
+            </button>
+
+            <p id="bookMsg"></p>
+        </section>
+
+        <!-- ROOM -->
+        <section id="room"
+            class="page">
+
+            <h1>Check Room</h1>
+
+            <select id="checkRoom"></select>
+            <select id="checkRoomSlot"></select>
+
+            <button onclick="checkRoom()">
+                Check
+            </button>
+
+            <p id="roomMsg"></p>
+        </section>
+
+        <!-- TEACHER -->
+        <section id="teacher"
+            class="page">
+
+            <h1>Check Teacher</h1>
+
+            <select id="checkTeacher"></select>
+            <select id="checkTeacherSlot"></select>
+
+            <button onclick="checkTeacher()">
+                Check
+            </button>
+
+            <p id="teacherMsg"></p>
+        </section>
+
+        <!-- FULL TIMETABLE -->
+        <section id="timetable"
+            class="page">
+
+            <h1>Full Timetable</h1>
+
+            <table id="fullTable"></table>
+        </section>
+
+        <!-- FINAL -->
+        <section id="final"
+            class="page">
+
+            <h1>Final Schedule</h1>
+
+            <div id="finalSchedule"></div>
+        </section>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```
